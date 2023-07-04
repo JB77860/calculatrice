@@ -3,17 +3,27 @@
 
 int main()
 {
-    int nb1, nb2;
+    int menu = 0;
+    int argA = 0;
+    int argB = 0;
 
     printf("Veuillez entrer le permier nombre:\n");
     scanf("%d", &nb1);
     printf("Veuillez entrer le deuxième nombre:\n");
     scanf("%d", &nb2);
 
-    printf("la somme est de : %d \n", addition(nb1, nb2));
-    printf("la différence est de : %d\n", soustraction(nb1, nb2));
-    printf("le produit est de : %d\n", multiplication(nb1, nb2));
-    printf("le quotient est de : %f\n", division(nb1, nb2));
+    while(menu != 5)
+    {
+        scanf("%d %d %d", &menu, &argA, &argB);
+        if(menu == 1)
+            printf("\n%d + %d = %d", argA, argB, addition(argA, argB));
+        else if(menu == 2)
+            printf("\n%d - %d = %d", argA, argB, soustraction(argA, argB));
+        else if(menu == 3)
+            printf("\n%d * %d = %d", argA, argB, multiplication(argA, argB));
+        else if(menu == 4)
+            printf("\n%d / %d = %d", argA, argB, division(argA, argB));
+    }
   
     return (0);
 }
